@@ -1,9 +1,9 @@
 $(document).ready(function(){
 var target;
-$('body').on('click','.startCounter',function(event){
+/*$('body').on('click','.startCounter',function(event){
 	event.preventDefault();
-	$(this).removeClass('active');
-	$(this).parent().next().children('.pauseCounter').addClass('active');
+	$(this).removeClass('currentCounter');
+	$(this).parent().next().children('.pauseCounter').addClass('currentCounter');
 	clearInterval(timeCounter);
     target = $(this);
 	console.log(target);
@@ -22,10 +22,10 @@ $('body').on('click','.startCounter',function(event){
 		$(target).parent().siblings().children('.counterSeconds').val(totalSeconds%60);	
 		}
 	    else if(totalSeconds<1){	
-	    	$(target).removeClass("active");
-	    	$(target).parent().siblings().children().removeClass("active"); 	    	    	
+	    	$(target).removeClass("currentCounter");
+	    	$(target).parent().siblings().children().removeClass("currentCounter"); 	    	    	
     		target = $(target).parent().parent().parent().next().find('.startCounter');
-    		$(target).parent().siblings().children('.pauseCounter').addClass('active');	
+    		$(target).parent().siblings().children('.pauseCounter').addClass('currentCounter');	
 	 		counterMinutes = parseInt($(target).parent().siblings().children('.counterMinutes').val());
 			counterSeconds = parseInt($(target).parent().siblings().children('.counterSeconds').val());	
 			totalSeconds = (counterMinutes * 60) + counterSeconds; 
@@ -38,18 +38,18 @@ var timeCounter = setInterval(totalTime, 1000);
 $(".pauseCounter").click(function(event){
 	event.preventDefault();
 	clearInterval(timeCounter);
-	$(this).removeClass('active');
-	$(this).parent().siblings().children('.startCounter').addClass("active");
+	$(this).removeClass('currentCounter');
+	$(this).parent().siblings().children('.startCounter').addClass("currentCounter");
 });
 });
-
+*/
 $('body').on('click', '#startSequence', function(event){
 	$(this).hide();
 	$('#pauseSequence').show();
-	target = $('.startCounter:visible');
+	target = $('.currentCounter');
 	event.preventDefault();
-	$(target).removeClass('active');
-	$(target).parent().next().children('.pauseCounter').addClass('active');
+	$(target).removeClass('currentCounter');
+	$(target).parent().next().children('.pauseCounter').addClass('currentCounter');
 	clearInterval(timeCounter);
 	console.log(target);
 	var counterMinutes = parseInt($(target).parent().siblings().children('.counterMinutes').val());
@@ -67,10 +67,10 @@ $('body').on('click', '#startSequence', function(event){
 			$(target).parent().siblings().children('.counterSeconds').val(totalSeconds%60);	
 		}
 	    else if(totalSeconds<1){	
-	    	$(target).removeClass("active");
-	    	$(target).parent().siblings().children().removeClass("active"); 	    	    	
+	    	$(target).removeClass("currentCounter");
+	    	$(target).parent().siblings().children().removeClass("currentCounter"); 	    	    	
     		target = $(target).parent().parent().parent().next().find('.startCounter');
-    		$(target).parent().siblings().children('.pauseCounter').addClass('active');	
+    		$(target).parent().siblings().children('.pauseCounter').addClass('currentCounter');	
 	 		counterMinutes = parseInt($(target).parent().siblings().children('.counterMinutes').val());
 			counterSeconds = parseInt($(target).parent().siblings().children('.counterSeconds').val());	
 			totalSeconds = (counterMinutes * 60) + counterSeconds; 
@@ -83,8 +83,8 @@ var timeCounter = setInterval(totalTime, 1000);
 $(".pauseCounter").click(function(event){
 	event.preventDefault();
 	clearInterval(timeCounter);
-	$(this).removeClass('active');
-	$(this).parent().siblings().children('.startCounter').addClass("active");
+	$(this).removeClass('currentCounter');
+	$(this).parent().siblings().children('.startCounter').addClass("currentCounter");
 });
 
 $("#pauseSequence").click(function(event){
@@ -97,7 +97,7 @@ $("#pauseSequence").click(function(event){
 });
 
 
-$('.startCounter.active').clone().appendTo("#tra");	
+$('.startCounter.currentCounter').clone().appendTo("#tra");	
 
 
 $('#newCounter').click(function(event){
