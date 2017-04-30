@@ -15,41 +15,40 @@
 <div id="clock">
 <div class="row">
 <form class = "counterForm form-inline">
-	<div class="form-group col-md-3"> 
+	<div class="form-group col-md-8"> 
 	<input type="text" class="routine form-control"  value="activity.."  />	
 </div>
-<div class="form-group col-md-3"> 
+<div class="form-group col-md-2"> 
 	<input type="text" class="counterMinutes form-control" value="0"  />
 </div>
-<div class="form-group col-md-3"> 
+<div class="form-group col-md-2"> 
 	<input type="text" class="counterSeconds form-control"  value="0" />
 </div>
-<div class="form-group col-md-3"> 
-	<input type = "submit" class="startCounter currentCounter form-control btn btn-success" value="start" />
+<div class="form-group"> 
+	<input type = "hidden" class="startCounter currentCounter" value="start" />
 </div>
-<div class="form-group col-md-3"> 
-	<input type = "submit" class="pauseCounter form-control btn btn-warning" value="pause" />
+<div class="form-group"> 
+	<input type = "hidden" class="pauseCounter" value="pause" />
 </div>
 </form>
 </div>
 
 <div class="row">
-
 <form class = "counterForm form-inline">
-	<div class="form-group col-md-3"> 
+	<div class="form-group col-md-8"> 
 	<input type="text" class="routine form-control"  value="activity.."  />	
 </div>
-<div class="form-group col-md-3"> 
+<div class="form-group col-md-2"> 
 	<input type="text" class="counterMinutes form-control" value="0"  />
 </div>
-<div class="form-group col-md-3"> 
+<div class="form-group col-md-2"> 
 	<input type="text" class="counterSeconds form-control"  value="0" />
 </div>
-<div class="form-group col-md-3"> 
-	<input type = "submit" class="startCounter form-control btn btn-success" value="start" />
+<div class="form-group"> 
+	<input type = "hidden" class="startCounter currentCounter" value="start" />
 </div>
-<div class="form-group col-md-3"> 
-	<input type = "submit" class="pauseCounter form-control btn btn-warning" value="pause" />
+<div class="form-group"> 
+	<input type = "hidden" class="pauseCounter" value="pause" />
 </div>
 </form>
 </div>
@@ -59,7 +58,12 @@
 
 </div>
 <div class="row">
-<div class="col-md-9">
+<form class = "counterForm form-inline">	
+<div class="form-group col-md-2"> 
+	<input type="text" class="form-control" id="repeatSequence" value="3" />
+</div>	
+</form>
+<div class="col-md-12">
 <button class="btn btn-success full-btn" id="startSequence"> Start </button>
 <button class="btn btn-warning full-btn" id="pauseSequence"> Pause </button>
 <button class="btn btn-default full-btn" id="newCounter"> Add new row </button>
