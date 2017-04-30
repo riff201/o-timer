@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html>
+<head> 
+<!-- Latest compiled and minified CSS -->
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+<link rel="stylesheet" href="css/style.css">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.0/jquery.min.js"></script>
+<script src="script.js"> </script>
+</head>
+<body>
+<div class="container">
+<div class="row">
+<div class="col-md-8 col-md-offset-2">
+<div id="test"> </div>
+<div id="clock">
+<div class="row">
+<form class = "counterForm form-inline">
+	<div class="form-group col-md-3"> 
+	<input type="text" class="routine form-control"  value="activity.."  />	
+</div>
+<div class="form-group col-md-3"> 
+	<input type="text" class="counterMinutes form-control" value="0"  />
+</div>
+<div class="form-group col-md-3"> 
+	<input type="text" class="counterSeconds form-control"  value="0" />
+</div>
+<div class="form-group col-md-3"> 
+	<input type = "submit" class="startCounter active form-control btn btn-success" value="start" />
+</div>
+<div class="form-group col-md-3"> 
+	<input type = "submit" class="pauseCounter form-control btn btn-warning" value="pause" />
+</div>
+</form>
+</div>
+
+<div class="row">
+
+<form class = "counterForm form-inline">
+	<div class="form-group col-md-3"> 
+	<input type="text" class="routine form-control"  value="activity.."  />	
+</div>
+<div class="form-group col-md-3"> 
+	<input type="text" class="counterMinutes form-control" value="0"  />
+</div>
+<div class="form-group col-md-3"> 
+	<input type="text" class="counterSeconds form-control"  value="0" />
+</div>
+<div class="form-group col-md-3"> 
+	<input type = "submit" class="startCounter form-control btn btn-success" value="start" />
+</div>
+<div class="form-group col-md-3"> 
+	<input type = "submit" class="pauseCounter form-control btn btn-warning" value="pause" />
+</div>
+</form>
+</div>
+
+
+
+
+</div>
+<div class="row">
+<div class="col-md-9">
+<button class="btn btn-success full-btn" id="startSequence"> Start </button>
+<button class="btn btn-default full-btn" id="newCounter"> Add new row </button>
+</div>
+</div>
+
+<div id="clock2">
+</div>
+</div>
+</div>
+<!-- Latest compiled and minified JavaScript -->
+</body>
+</html>
+

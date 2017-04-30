@@ -1,0 +1,33 @@
+input.startCounter{
+	display: none !important;
+}
+input.startCounter.active{
+	display: block !important;
+}
+
+input.pauseCounter{
+	display: none !important;
+}
+
+input.pauseCounter.active{
+	display: block !important;
+}
+
+.form-control{
+	width: 100% !important;
+}
+
+.full-btn{
+	margin-top: 10px;
+	width:100%;
+	height: 50px;
+}
+
+.counterForm{
+	margin-top:20px;
+}
+.counterForm input[type="text"]{
+	padding-top:20px;
+	padding-bottom: 20px;
+	font-size: 22px;
+}
