@@ -1,4 +1,8 @@
 $(document).ready(function(){
+var inputMinutes = $('.counterForm').eq(0).children()[1];
+var getMinutes = $(inputMinutes).children().val();
+console.log(getMinutes);
+
 $('body').on('click', '#startSequence', function(event){
 	$(this).hide();
 	$('#pauseSequence').show();
@@ -67,7 +71,7 @@ $('#newCounter').click(function(event){
 	$row = $('<div class="row"></div>');
 	$form = $('<form class="counterForm form-inline"></form>');
  	$form.append('<div class="form-group col-md-8"> <input type="text" class="routine form-control"  value="activity..."  /></div> ');	
- 	$form.append(' <div class="form-group col-md-2"> <input type="text" class="counterMinutes form-control"  value="0"  /></div>');
+ 	$form.append(' <div class="form-group col-md-2"> <input type="text" class="counterMinutes form-control"  value="4"  /></div>');
 	$form.append(' <div class="form-group col-md-2"> <input type="text" class="counterSeconds form-control" value="0" /></div>'); 	
 	$form.append(' <div class="form-group"> <input type = "hidden" class="startCounter"/></div>');
 	$form.append(' <div class="form-group"> <input type = "hidden" class="pauseCounter"/></div>');	

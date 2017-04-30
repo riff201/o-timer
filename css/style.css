@@ -23,10 +23,6 @@ input.pauseCounter.active{
 	height: 50px;
 }
 
-.counterForm{
-	margin-top:20px;
-}
-
 #pauseSequence{
 	display: none;
 }
@@ -35,4 +31,8 @@ input.pauseCounter.active{
 	padding-top:20px;
 	padding-bottom: 20px;
 	font-size: 22px;
+}
+
+.counterMinutes, .counterSeconds{
+	text-align: center;
 }
