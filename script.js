@@ -43,7 +43,9 @@ $(".pauseCounter").click(function(event){
 });
 });
 
-$('#startSequence').click(function(){
+$('body').on('click', '#startSequence', function(event){
+	$(this).hide();
+	$('#pauseSequence').show();
 	target = $('.startCounter:visible');
 	event.preventDefault();
 	$(target).removeClass('active');
@@ -56,13 +58,13 @@ $('#startSequence').click(function(){
 	
 	function totalTime() {
 		if(totalSeconds>0){
-		console.log(totalSeconds);		
-		counterMinutes = parseInt($(target).parent().siblings().children('.counterMinutes').val());
-	    counterSeconds = parseInt($(target).parent().siblings().children('.counterSeconds').val());	
-	    totalSeconds = (counterMinutes * 60) + counterSeconds;		
-		totalSeconds--;	
-		$(target).parent().siblings().children('.counterMinutes').val(Math.floor(totalSeconds/60));	
-		$(target).parent().siblings().children('.counterSeconds').val(totalSeconds%60);	
+			console.log(totalSeconds);		
+			counterMinutes = parseInt($(target).parent().siblings().children('.counterMinutes').val());
+		    counterSeconds = parseInt($(target).parent().siblings().children('.counterSeconds').val());	
+		    totalSeconds = (counterMinutes * 60) + counterSeconds;		
+			totalSeconds--;	
+			$(target).parent().siblings().children('.counterMinutes').val(Math.floor(totalSeconds/60));	
+			$(target).parent().siblings().children('.counterSeconds').val(totalSeconds%60);	
 		}
 	    else if(totalSeconds<1){	
 	    	$(target).removeClass("active");
@@ -84,19 +86,29 @@ $(".pauseCounter").click(function(event){
 	$(this).removeClass('active');
 	$(this).parent().siblings().children('.startCounter').addClass("active");
 });
+
+$("#pauseSequence").click(function(event){
+	event.preventDefault();
+	$(this).hide();
+	$('#startSequence').show();	
+	clearInterval(timeCounter);
+});
 	console.log(target);
 });
+
+
+$('.startCounter.active').clone().appendTo("#tra");	
 
 
 $('#newCounter').click(function(event){
 	event.preventDefault();
 	$row = $('<div class="row"></div>');
 	$form = $('<form class="counterForm form-inline"></form>');
- 	$form.append('<div class="form-group col-md-3"> <input type="text" class="routine form-control"  value="activity..."  /></div> ');	
- 	$form.append(' <div class="form-group col-md-3"> <input type="text" class="counterMinutes form-control"  value="0"  /></div>');
-	$form.append(' <div class="form-group col-md-3"> <input type="text" class="counterSeconds form-control" value="0" /></div>'); 	
-	$form.append(' <div class="form-group col-md-3"><input type = "submit" class="startCounter form-control" value="start" /></div>');
- 	$form.append(' <div class="form-group col-md-3"><input type = "submit" class="pauseCounter form-control btn btn-warning" value="pause" /></div>');
+ 	$form.append('<div class="form-group col-md-4"> <input type="text" class="routine form-control"  value="activity..."  /></div> ');	
+ 	$form.append(' <div class="form-group col-md-4"> <input type="text" class="counterMinutes form-control"  value="0"  /></div>');
+	$form.append(' <div class="form-group col-md-4"> <input type="text" class="counterSeconds form-control" value="0" /></div>'); 	
+	$form.append(' <div class="form-group col-md-12"><input type = "submit" class="startCounter form-control" value="start" /></div>');
+ 	$form.append(' <div class="form-group col-md-12"><input type = "submit" class="pauseCounter form-control btn btn-warning" value="pause" /></div>');
  	$('#clock').append($row);
  	$($row).append($form); 	 	
 });

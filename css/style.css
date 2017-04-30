@@ -26,6 +26,11 @@ input.pauseCounter.active{
 .counterForm{
 	margin-top:20px;
 }
+
+#pauseSequence{
+	display: none;
+}
+
 .counterForm input[type="text"]{
 	padding-top:20px;
 	padding-bottom: 20px;
