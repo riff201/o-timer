@@ -1,8 +1,6 @@
 $(document).ready(function(){
 var inputMinutes = $('.counterForm').eq(0).children()[1];
 var getMinutes = $(inputMinutes).children().val();
-console.log(getMinutes);
-
 $('body').on('click', '#startSequence', function(event){
 	$(this).hide();
 	$('#pauseSequence').show();
